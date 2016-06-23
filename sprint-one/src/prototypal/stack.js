@@ -4,14 +4,12 @@ var Stack = function() {
   var someInstance = Object.create(Stack.prototype);
   someInstance.storage = {};
   someInstance.counter = 0;
-
+  _.extend(someInstance, stackMethods);
 
   return someInstance;
 };
 
-var stackMethods = {
-
-};
+var stackMethods = Stack.prototype
 
 Stack.prototype.push = function(value){
   this.counter++
@@ -28,4 +26,5 @@ Stack.prototype.pop = function(){
 Stack.prototype.size = function(){
   return this.counter
 };
-
+var obj = new Stack()
+console.log(Object.getPrototypeOf(obj));
