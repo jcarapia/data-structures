@@ -7,9 +7,7 @@ var Queue = function(){
     someInstance.count2 = 0;
     someInstance.count3 = 0;
     someInstance.storage = {};
-    // someInstance.enqueue = queueMethods.enqueue;
-    // someInstance.dequeue = queueMethods.dequeue;
-    // someInstance.size = queueMethods.size;
+
     _.extend(someInstance,queueMethods);
   
   return someInstance;
@@ -27,7 +25,7 @@ queueMethods.dequeue = function(){
   if (this.count > 0) {
     this.count--;
     this.count2++;
-  };
+  }
   return this.storage[this.count2]
 };
 

@@ -9,10 +9,10 @@ var Queue = function(){
   // Implement the methods below
 
   someInstance.enqueue = function(value){
-    count++
-    count3++
+    count++;
+    count3++;
 
-    storage[count3] = value
+    storage[count3] = value;
   };
 
   someInstance.dequeue = function(){
@@ -21,13 +21,12 @@ var Queue = function(){
       count--;
       count2++;
     }
-
-    return storage[count2];
     
+    return storage[count2];    
   };
 
   someInstance.size = function(){
-    return count
+    return count;
   };
 
   return someInstance;
