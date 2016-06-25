@@ -21,7 +21,40 @@ treeMethods.addChild = function(value){
 };
 
 treeMethods.contains = function(target){
-  return target
+  //var result;
+  var collection = this.children;
+  
+  var subroutine = function(obj){
+    console.log('obj',obj)
+    var flag = false;
+    
+    if(obj.value === target){
+      return true;
+    }
+
+    if(obj.children.length){
+      for (var i = 0; i < obj.children.length; i++) {
+        console.log(obj.children[i])
+        if(subroutine(obj.children[i])){
+          return true;
+        }
+      }
+    }
+    return flag;
+  }
+  // while(collection){
+  //   console.log('yo')
+  //   // for (var i = 0; i < collection.length; i++) {
+  //   //   if(collection[i].value === target){
+  //   //     return true
+  //   //   }
+  //   //   else if(collection[i].children){
+  //   //     console.log('yo')
+  //   //   }
+  //   // };
+  // }
+  return subroutine(this);
+  
 };
 
 
