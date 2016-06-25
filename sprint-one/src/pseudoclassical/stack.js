@@ -4,6 +4,7 @@ var Stack = function() {
   this.storage = {};
   this.counter = 0; 
 
+  
 };
 
 Stack.prototype.push = function(value){
