@@ -74,6 +74,4 @@ Graph.prototype.forEachNode = function(cb){
 
 var mygraph = new Graph();
 mygraph.addNode('car');         
-console.log(_.contains(mygraph, 'car'))                                                                                                                                                                                           
 
-console.log(mygraph);
