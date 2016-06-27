@@ -3,7 +3,7 @@ var Tree = function(value){
   newTree.value = value;
 
   // your code here
-  newTree.children = [];
+  newTree.children = []; // children are store in an array, children are new instances of Tree themselves.
   _.extend(newTree, treeMethods);
 
   return newTree;

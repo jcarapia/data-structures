@@ -2,7 +2,7 @@ describe('binarySearchTree', function() {
   var binarySearchTree;
 
   beforeEach(function() {
-    binarySearchTree = BinarySearchTree(5);
+    binarySearchTree =  new BinarySearchTree(5); //Note: added the 'new' to use pseudoclassical instantiation
   });
 
   it('should have methods named "insert", "contains", and "depthFirstLog', function() {
@@ -34,7 +34,7 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
     binarySearchTree.depthFirstLog(func);
-    console.log(array);
+    //console.log(array); //Note: commented out this line to redce clutter in console during testing
     expect(array).to.eql([5,2,3]);
   });
 });

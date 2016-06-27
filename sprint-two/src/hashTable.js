@@ -57,7 +57,7 @@ HashTable.prototype.insert = function(k, v){
     };
     bucket.push([k,v])
     this._storage.set(i,bucket)
-    console.dir(this)
+    //console.dir(this)
 
 };
 
@@ -65,12 +65,17 @@ HashTable.prototype.retrieve = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(i)
   //console.log(bucket);
+
+
   for (var j = 0; j < bucket.length; j++) {
+    if(bucket[j]){
     if(bucket[j][0] === k){
       return bucket[j][1]
     }
+  }
   };
   return null
+  
 };
 
 HashTable.prototype.remove = function(k){
@@ -84,7 +89,7 @@ HashTable.prototype.remove = function(k){
   // })
 for (var j = 0; j < bucket.length; j++) {
     if(bucket[j][0] === k){
-      console.log('bucket',bucket)
+      //console.log('bucket',bucket)
       bucket[j] = null;
       this._storage.set(i, bucket )
     }
@@ -96,16 +101,12 @@ for (var j = 0; j < bucket.length; j++) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-//var hash = new HashTable();
-//console.log('hash',hash);
-// hash.insert('one', 'two');
-// console.log('hash2',hash);
 // var hash = new HashTable();
-// console.log(hash)
-// hash._storage.set(0,1);
-// console.log(hash._storage.get(0))
-// console.log(hash._storage)
-
+// hash.insert('Jorge','Carapia')
+// console.log(hash);
+// console.log(hash.retrieve('Jorge'))
+// hash.remove('Jorge')
+// console.log(hash.retrieve('Jorge'))
 
 
 
